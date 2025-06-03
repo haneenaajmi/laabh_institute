@@ -71,101 +71,120 @@ body {
   line-height: 26px;
   color: var(--color-default);
   background-color: #0B0B29;
-   overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+.bold-heading {
+  font-weight: bold;
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.left-side,
+.right-side {
+  max-width: 220px;
+  padding: 0 1rem;
 }
 
 
-.layout {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      max-width: 900px;
-      padding: 2rem;
-    }
+/* Align left side block to bottom to align horizontally with right lower block */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Push to bottom */
+  height: 270px;
+  /* match approx total height of right side blocks */
+}
 
-    .left-side, .right-side {
-      max-width: 220px;
-      padding: 0 1rem;
-    }
+.left-side h2,
+.right-side h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+}
 
+.left-side p,
+.right-side p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+}
 
-    /* Align left side block to bottom to align horizontally with right lower block */
-    .left-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end; /* Push to bottom */
-      height: 270px; /* match approx total height of right side blocks */
-    }
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-    .left-side h2, .right-side h2 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      color: #fff;
-    }
+.right-side>div {
+  margin-bottom: 1.5rem;
+}
 
-    .left-side p, .right-side p {
-      font-size: 1rem;
-      line-height: 1.4;
-      color: #fff;
-      margin: 0 0 1.5rem 0;
-    }
+.right-side>div:last-child {
+  margin-bottom: 0;
+}
 
-    .right-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    .right-side > div {
-      margin-bottom: 1.5rem;
-    }
-    .right-side > div:last-child {
-      margin-bottom: 0;
-    }
+.image-center {
+  flex-shrink: 0;
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  align-self: center;
+  /* center vertically */
+}
 
-    .image-center {
-      flex-shrink: 0;
-      max-width: 220px;
-      max-height: 220px;
-      border-radius: 15px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-      align-self: center; /* center vertically */
-    }
-    .image-center:hover {
-      transform: scale(1.05) rotate(3deg);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    }
+.image-center:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
 
-    @media (max-width: 700px) {
-      body, html {
-        height: auto;
-        padding: 2rem 1rem;
-      }
-      .layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        max-width: 90vw;
-        padding: 1rem;
-      }
-      .left-side, .right-side {
-        max-width: 100%;
-        padding: 0;
-        text-align: center;
-        height: auto;
-        justify-content: initial;
-      }
-      .right-side > div {
-        margin-bottom: 1rem;
-      }
-      .image-center {
-        max-width: 80vw;
-        max-height: 80vw;
-        margin: 0;
-        align-self: center;
-      }
-    }
+@media (max-width: 700px) {
+
+  body,
+  html {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 90vw;
+    padding: 1rem;
+  }
+
+  .left-side,
+  .right-side {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+    height: auto;
+    justify-content: initial;
+  }
+
+  .right-side>div {
+    margin-bottom: 1rem;
+  }
+
+  .image-center {
+    max-width: 80vw;
+    max-height: 80vw;
+    margin: 0;
+    align-self: center;
+  }
+}
 
 img {
   max-width: 100%;
