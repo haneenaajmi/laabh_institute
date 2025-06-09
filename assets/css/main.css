@@ -61,7 +61,7 @@ html {
 }
 
 body {
-  padding: 0;
+  padding: 10;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 1000;
@@ -73,6 +73,11 @@ body {
   color: var(--color-default);
   background-color: #0B0B29;
   overflow-x: hidden;
+}
+
+.custom-padded {
+  padding: 0px 20px 0px 20px;
+  /* top, right, bottom, left */
 }
 
 .bold-heading {
